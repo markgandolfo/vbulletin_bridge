@@ -23,37 +23,37 @@ The Vbulletin namespace contains ActiveRecord models corresponding to Vbulletin 
 
 So far these include:
 
-  Vbulletin::Avatar
-  Vbulletin::ImageCategory  
-  Vbulletin::InfractionGroup
-  Vbulletin::Pm
-  Vbulletin::PmText
-  Vbulletin::Post
-  Vbulletin::Session
-  Vbulletin::Setting
-  Vbulletin::Style
-  Vbulletin::SubscribeThread
-  Vbulletin::Thread
-  Vbulletin::User
-  Vbulletin::UserGroup
+    Vbulletin::Avatar
+    Vbulletin::ImageCategory  
+    Vbulletin::InfractionGroup
+    Vbulletin::Pm
+    Vbulletin::PmText
+    Vbulletin::Post
+    Vbulletin::Session
+    Vbulletin::Setting
+    Vbulletin::Style
+    Vbulletin::SubscribeThread
+    Vbulletin::Thread
+    Vbulletin::User
+    Vbulletin::UserGroup
 
 More models will follow as development progresses.
 
 Vbulletin models inherit from ActiveRecord::Base so all the standard methods are available:
 
-  Vbulletin::User.all
-  Vbulletin::User.count
-  Vbulletin::User.find_by_email('joe@example.com')
+    Vbulletin::User.all
+    Vbulletin::User.count
+    Vbulletin::User.find_by_email('joe@example.com')
 
 A number of Vbulletin database associations have been mapped, with more to follow:
   
-  user = Vbulletin::User.first
-  user.primary_user_group # returns Vbulletin::UserGroup instance
-  user.last_post # returns Vbulletin::Post instance
+    user = Vbulletin::User.first
+    user.primary_user_group # returns Vbulletin::UserGroup instance
+    user.last_post # returns Vbulletin::Post instance
   
 User authentication:
 
-  User.authenticate('MyUsername', 'MyPassword')
+    User.authenticate('MyUsername', 'MyPassword')
 
 (Note: Vbulletin uses javascript to send password as MD5 hash when logging in, User#authenticate currently does not support this and expects plain text passwords)
 
